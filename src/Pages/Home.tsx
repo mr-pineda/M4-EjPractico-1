@@ -1,6 +1,7 @@
 import ServiceList from '../components/ServiceList';
+import doctorsData from '../data/doctors.json';
 
-function Home() {
+const Home = () => {
   return (
     <>
       <div className=' bg-sky-200 w-full px-28 py-16'>
@@ -15,10 +16,12 @@ function Home() {
         </p>
       </div>
       <div>
-        <ServiceList />
+        <ServiceList
+          services={doctorsData.flatMap((doctor) => doctor.services)}
+        />
       </div>
     </>
   );
-}
+};
 
 export default Home;

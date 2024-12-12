@@ -1,8 +1,4 @@
-import doctorsData from '../data/doctors.json';
-
-const services = doctorsData.flatMap((doctor) => doctor.services);
-
-const ServiceList = () => {
+const ServiceList = ({ services }: { services: string[] }) => {
   console.log(services);
 
   return (

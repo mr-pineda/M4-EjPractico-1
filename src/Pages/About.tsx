@@ -1,7 +1,7 @@
 import DoctorCard from '../components/DoctorCard';
 import doctorsData from '../data/doctors.json';
 
-function About() {
+const About = () => {
   return (
     <>
       <div className=' bg-sky-200 w-full px-28 py-16'>
@@ -33,6 +33,6 @@ function About() {
       </div>
     </>
   );
-}
+};
 
 export default About;
