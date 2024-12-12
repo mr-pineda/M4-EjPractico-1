@@ -18,8 +18,11 @@ const Header = () => {
 
       <ul className='flex flex-row items-center'>
         {sectionList.map(({ name, url }, idx) => (
-          <li className='flex items-center ml-3 my-0 hover:bg-sky-700 h-full px-3'>
-            <Link key={idx} to={url} style={{ color: 'white', fontSize: 22 }}>
+          <li
+            key={idx}
+            className='flex items-center ml-3 my-0 hover:bg-sky-700 h-full px-3'
+          >
+            <Link to={url} style={{ color: 'white', fontSize: 22 }}>
               {name}
             </Link>
           </li>

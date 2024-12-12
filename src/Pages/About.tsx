@@ -1,16 +1,7 @@
-// import './About.css';
-import type { doctorInfo } from '../types/data';
 import DoctorCard from '../components/DoctorCard';
+import doctorsData from '../data/doctors.json';
 
-const doctor: doctorInfo = {
-  name: 'Harry',
-  specialty: 'doctor de algo',
-  description: 'alkajsdkajsdlkjasldkjalksjdas',
-  services: ['mdico', 'dentista', 'payaso'],
-  years: 9,
-};
-
-function Home() {
+function About() {
   return (
     <>
       <div className=' bg-sky-200 w-full px-28 py-16'>
@@ -34,11 +25,14 @@ function Home() {
           fugit facilis in nesciunt? Velit voluptate optio, rerum quae ratione
           est. Illum, natus!
         </p>
+        <div className='grid grid-cols-4 gap-4'>
+          {doctorsData.map((doctor, idx) => (
+            <DoctorCard key={idx} doctor={doctor} />
+          ))}
+        </div>
       </div>
-
-      <DoctorCard doctor={doctor} />
     </>
   );
 }
 
-export default Home;
+export default About;
