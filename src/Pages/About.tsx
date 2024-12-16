@@ -1,7 +1,15 @@
+import { useEffect, useState } from 'react';
 import DoctorCard from '../components/DoctorCard';
 import doctorsData from '../data/doctors.json';
+import { doctorInfo } from '../types/data';
 
 const About = () => {
+  const [data, setData] = useState<doctorInfo[]>([]);
+  useEffect(() => {
+    // Simular carga inicial de datos
+    setData(doctorsData);
+  }, []);
+
   return (
     <>
       <div className=' bg-sky-200 w-full px-28 py-16'>
@@ -26,7 +34,7 @@ const About = () => {
           est. Illum, natus!
         </p>
         <div className='grid grid-cols-4 gap-4'>
-          {doctorsData.map((doctor, idx) => (
+          {data.map((doctor, idx) => (
             <DoctorCard key={idx} doctor={doctor} />
           ))}
         </div>

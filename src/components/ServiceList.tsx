@@ -1,6 +1,4 @@
 const ServiceList = ({ services }: { services: string[] }) => {
-  console.log(services);
-
   return (
     <ul>
       {services.map((service, idx) => {

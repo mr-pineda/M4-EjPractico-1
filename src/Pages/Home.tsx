@@ -1,7 +1,13 @@
+import { useEffect, useState } from 'react';
 import ServiceList from '../components/ServiceList';
 import doctorsData from '../data/doctors.json';
 
 const Home = () => {
+  const [data, setData] = useState<string[]>([]);
+  useEffect(() => {
+    // Simular carga inicial de datos
+    setData(doctorsData.flatMap((doctor) => doctor.services));
+  }, []);
   return (
     <>
       <div className=' bg-sky-200 w-full px-28 py-16'>
@@ -16,9 +22,8 @@ const Home = () => {
         </p>
       </div>
       <div>
-        <ServiceList
-          services={doctorsData.flatMap((doctor) => doctor.services)}
-        />
+        <h1 className='mb-5 text-lg font-bold'>Nuestros Servicios</h1>
+        <ServiceList services={data} />
       </div>
     </>
   );
